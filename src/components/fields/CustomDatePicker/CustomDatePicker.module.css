@@ -45,3 +45,25 @@
     color: #000000;
 }
 
+@media screen and (max-width: 640px) {
+    .date div {
+        width: initial;
+    }
+
+    .date + .date {
+        margin-left: 35px;
+    }
+
+    .date input {
+        max-width: 72px;
+        width: initial;
+    }
+
+    .date label {
+        width: 61px;
+        font-size: 13px;
+    }
+    .date.form__item div {
+        width: 100%;
+    }
+}

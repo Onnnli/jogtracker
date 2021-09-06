@@ -45,8 +45,8 @@ export const userActions = {
   logoutUser: () => async dispatch => {
     try {
       dispatch(loadingActions.startLoading());
-      const push_token = localStorage.getItem('jwt');
-      await userService.logoutUser({ push_token });
+      // const push_token = localStorage.getItem('jwt');
+      // await userService.logoutUser({ push_token });
 
       localStorage.removeItem('jwt');
       dispatch(userActions.logoutUserSuccess());
