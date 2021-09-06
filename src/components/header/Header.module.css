@@ -1,0 +1,31 @@
+.header {
+    padding: 30px 37px;
+    background-color: #7ed321;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content svg {
+    width: 147px;
+    height: 56px;
+}
+
+.menu__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 640px) {
+    .header {
+        padding: 18px 18px 20px;
+    }
+
+    .logotype {
+        width: 98px;
+        height: 37px;
+    }
+}

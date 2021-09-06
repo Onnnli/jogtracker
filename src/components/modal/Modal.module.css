@@ -1,0 +1,10 @@
+.portal {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 1px);
+    top: 0;
+    right: 0;
+    background: #ffffff;
+    transition: 0.5s;
+}

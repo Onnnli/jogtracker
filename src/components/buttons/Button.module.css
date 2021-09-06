@@ -1,0 +1,13 @@
+.button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.button__logout {
+    display: block;
+    border: 1px solid #7ed321;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+}

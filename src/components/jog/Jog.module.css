@@ -1,0 +1,120 @@
+.jogs__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 175px;
+}
+
+.jog {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: center;
+    padding: 50px 0 28px;
+    border-bottom: 2px solid transparent;
+}
+
+.jog:hover {
+    cursor: pointer;
+    border-bottom: 2px solid rgb(215, 215, 215);
+}
+.jog:hover .buttons__block {
+    display: flex;
+}
+
+.buttons__block {
+    flex-direction: column;
+    justify-self: flex-end;
+    margin-left: 20px;
+    position: absolute;
+    right: 5%;
+    display: none;
+}
+
+.buttons__update {
+    border: none;
+    padding: 10px;
+    background-color: #7ed321;
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.buttons__delete {
+    border: none;
+    padding: 10px;
+    background-color: red;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.jog__image {
+    display: flex;
+    flex: 1;
+    margin-right: 46px;
+    justify-content: flex-end;
+}
+
+.jog__image img {
+    width: 87px;
+    height: 87px;
+
+}
+.jog__info {
+    flex: 1;
+}
+
+.jog__info p {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-bottom: 12px;
+    color: #000000;
+}
+
+.jog__info p span {
+    color: #979797;
+}
+
+.jog__info p:first-child {
+    margin-bottom: 9px;
+    color: #979797;
+    font-weight: normal;
+}
+
+.button__empty {
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #e990f9;
+    width: 249px;
+    height: 60px;
+    padding: 20px 0 34px;
+    border-radius: 36px;
+    border: 3px solid #e990f9;
+}
+
+@media screen and (max-width: 640px) {
+    .jogs__wrapper {
+        padding-top: 0;
+    }
+
+    .jog {
+        max-width: 100%;
+        border-bottom: 2px solid rgb(215, 215, 215);
+        justify-content: center;
+        margin: 0;
+        padding: 45px 67px;
+    }
+    .jog__info{
+        width: 100%;
+    }
+}

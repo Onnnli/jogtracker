@@ -1,0 +1,47 @@
+.date {
+    display: flex;
+    align-items: center;
+}
+
+.date + .date {
+    margin-left: 45px;
+}
+
+.date label {
+    font-size: 13px;
+    color: #979797;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.date input {
+    max-width: 100px;
+    width: 100%;
+}
+
+.datePicker {
+    width: 72px;
+    height: 31px;
+    border-radius: 11px;
+    border: 1px solid #979797;
+    padding: 0 10px;
+    outline: none;
+    margin-left: auto;
+}
+
+.date.form__item input {
+    max-width: 236px;
+    margin-left: auto;
+}
+
+.date.form__item label {
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    margin-right: 20px;
+    color: #000000;
+}
+

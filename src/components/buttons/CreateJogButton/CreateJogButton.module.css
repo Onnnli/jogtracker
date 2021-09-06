@@ -1,0 +1,26 @@
+.addButton {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.addButton img {
+    width: 60px;
+    height: 60px;
+}
+
+@media screen and (max-width: 640px) {
+    .addButton {
+        display: none;
+    }
+
+    .addButton_visible {
+        display: block;
+    }
+}

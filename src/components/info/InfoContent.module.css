@@ -1,0 +1,38 @@
+.content {
+    max-width: 614px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 85px;
+}
+
+.info__title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 15px;
+    color: #7ed321;
+}
+
+.info__description p {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    margin: 0 0 30px;
+}
+
+@media screen and (max-width: 640px) {
+    .content {
+        padding: 24px 25px;
+    }
+
+    .info__title {
+        font-size: 25px;
+    }
+
+    .info__description p {
+        font-size: 12px;
+        line-height: 24px;
+    }
+}

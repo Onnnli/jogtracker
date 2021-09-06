@@ -1,0 +1,30 @@
+.filter__button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 39px;
+    height: 39px;
+    margin-left: 49px;
+    cursor: pointer;
+}
+
+.filter__image {
+    width: 26px;
+    height: 26px;
+}
+
+.filter__image_active {
+    width: 39px;
+    height: 39px;
+}
+
+@media screen and (max-width: 640px) {
+    .filter__button {
+        margin-left: auto;
+        display: none;
+    }
+
+    .filter_visible {
+        display: block;
+    }
+}

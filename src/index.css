@@ -1,13 +1,24 @@
+@font-face {
+    font-family: 'SFUIText';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Text Regular'), local('SFUIText-Regular'),
+    url('./fonts/SFUIText-Regular.ttf') format('ttf'),
+    url('./fonts/SFUIText-Regular.woff') format('woff');
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: SFUIText, sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
