@@ -27,5 +27,5 @@ it('renders jogs without jogsArray page correctly', () => {
     );
   });
 
-  expect(container.textContent).toBe('Nothing is thereCreate your jog first');
+  expect(container.textContent).toBe('');
 });
