@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import CustomDatePicker from '../fields/CustomDatePicker/CustomDatePicker';
@@ -6,13 +6,19 @@ import CustomDatePicker from '../fields/CustomDatePicker/CustomDatePicker';
 import styles from './Filter.module.css';
 
 const Filter = ({ date, onChange }) => {
-  const onChangeStartDate = value => {
-    onChange({ ...date, startDate: value });
-  };
+  const onChangeStartDate = useCallback(
+    value => {
+      onChange({ ...date, startDate: value });
+    },
+    [date, onChange]
+  );
 
-  const onChangeFinishDate = value => {
-    onChange({ ...date, finishDate: value });
-  };
+  const onChangeFinishDate = useCallback(
+    value => {
+      onChange({ ...date, finishDate: value });
+    },
+    [date, onChange]
+  );
 
   return (
     <div className={styles.wrapper}>
@@ -32,7 +38,7 @@ const Filter = ({ date, onChange }) => {
   );
 };
 
-export default Filter;
+export default memo(Filter);
 
 Filter.propTypes = {
   date: PropTypes.object.isRequired,

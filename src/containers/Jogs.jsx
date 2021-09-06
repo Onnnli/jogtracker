@@ -33,11 +33,23 @@ const Jogs = ({
   const [visible, setVisible] = useState(false);
   const isJogPage = useMemo(() => pathname === appRouters.JOGS, [pathname]);
   const jogsState = useMemo(() => jogs, [jogs]);
+  const start = useMemo(
+    () => new Date(sortDateJogs.start * 1000),
+    [sortDateJogs]
+  );
+  const end = useMemo(() => new Date(sortDateJogs.end * 1000), [sortDateJogs]);
 
-  const [date, setSate] = useState({
-    startDate: new Date(sortDateJogs.start * 1000),
-    finishDate: new Date(sortDateJogs.end * 1000),
+  const [date, setDate] = useState({
+    startDate: '',
+    finishDate: '',
   });
+
+  useEffect(() => {
+    setDate({
+      startDate: start,
+      finishDate: end,
+    });
+  }, [sortDateJogs, start, end]);
 
   useEffect(() => {}, [jogsState]);
 
@@ -59,7 +71,7 @@ const Jogs = ({
   return (
     <>
       <Layout>
-        {activeFilter && <Filter date={date} onChange={setSate} />}
+        {activeFilter && <Filter date={date} onChange={setDate} />}
         <JogsWrapper
           jogsList={activeFilter ? filterList : jogsState}
           openModal={setVisible}
