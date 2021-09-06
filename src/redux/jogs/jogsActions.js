@@ -1,16 +1,21 @@
+import moment from 'moment';
+
 import { jogServices } from '../../services/jogServices';
 import { jogsActionTypes } from './jogsActionTypes';
-import moment from 'moment';
+import { loadingActions } from '../loading/loadingActions';
 
 export const jogsActions = {
   getJogs: () => async dispatch => {
     try {
+      dispatch(loadingActions.startLoading());
       const { data } = await jogServices.getJogs();
       if (data) {
         dispatch(jogsActions.getJogsSuccess(data.response.jogs));
       }
     } catch (e) {
       console.warn(e);
+    } finally {
+      dispatch(loadingActions.stopLoading());
     }
   },
 
@@ -21,6 +26,7 @@ export const jogsActions = {
 
   addJog: jog => async dispatch => {
     try {
+      dispatch(loadingActions.startLoading());
       const { data } = await jogServices.addJog({
         time: parseInt(jog.time),
         date: moment(new Date(jog.date)).format('DD.MM.YYYY'),
@@ -37,6 +43,8 @@ export const jogsActions = {
       }
     } catch (e) {
       console.warn(e);
+    } finally {
+      dispatch(loadingActions.stopLoading());
     }
   },
 
@@ -47,6 +55,7 @@ export const jogsActions = {
 
   updateJog: jog => async dispatch => {
     try {
+      dispatch(loadingActions.startLoading());
       const { data } = await jogServices.updateJog({ ...jog, jog_id: jog.id });
 
       if (data) {
@@ -59,6 +68,8 @@ export const jogsActions = {
       }
     } catch (e) {
       console.warn(e);
+    } finally {
+      dispatch(loadingActions.stopLoading());
     }
   },
 

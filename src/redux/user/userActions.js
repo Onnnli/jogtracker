@@ -1,12 +1,14 @@
+import { push } from 'connected-react-router';
+
 import { userService } from '../../services/userServices';
 import { userActionTypes } from './userActionTypes';
-
-import { push } from 'connected-react-router';
 import { appRouters } from '../../constants/appRouters';
+import { loadingActions } from '../loading/loadingActions';
 
 export const userActions = {
   authUser: () => async dispatch => {
     try {
+      dispatch(loadingActions.startLoading());
       const { data } = await userService.authUser();
 
       if (data) {
@@ -15,6 +17,8 @@ export const userActions = {
       }
     } catch (e) {
       console.warn(e);
+    } finally {
+      dispatch(loadingActions.stopLoading());
     }
   },
 
@@ -25,6 +29,7 @@ export const userActions = {
 
   loginUser: () => async dispatch => {
     try {
+      dispatch(loadingActions.startLoading());
       const { data } = await userService.loginUser('hello');
       if (data) {
         await localStorage.setItem('jwt', data.response.access_token);
@@ -32,11 +37,14 @@ export const userActions = {
       }
     } catch (e) {
       console.warn(e);
+    } finally {
+      dispatch(loadingActions.stopLoading());
     }
   },
 
   logoutUser: () => async dispatch => {
     try {
+      dispatch(loadingActions.startLoading());
       const push_token = localStorage.getItem('jwt');
       await userService.logoutUser({ push_token });
 
@@ -45,6 +53,8 @@ export const userActions = {
       await dispatch(push(`${appRouters.HOME}`));
     } catch (e) {
       console.warn(e);
+    } finally {
+      dispatch(loadingActions.stopLoading());
     }
   },
 
