@@ -48,7 +48,9 @@ const JogForm = ({ onClose, updateValues }) => {
             {({ input, meta }) => (
               <div className={styles.form__item}>
                 <FormField label="Distance" {...input} />
-                {meta.error && meta.touched && <span>{meta.error}</span>}
+                {meta.error && meta.touched && (
+                  <span className={styles.form__item_error}>{meta.error}</span>
+                )}
               </div>
             )}
           </Field>
@@ -56,7 +58,9 @@ const JogForm = ({ onClose, updateValues }) => {
             {({ input, meta }) => (
               <div className={styles.form__item}>
                 <FormField label="Time" {...input} />
-                {meta.error && meta.touched && <span>{meta.error}</span>}
+                {meta.error && meta.touched && (
+                  <span className={styles.form__item_error}>{meta.error}</span>
+                )}
               </div>
             )}
           </Field>
@@ -68,7 +72,9 @@ const JogForm = ({ onClose, updateValues }) => {
                   className={fieldStyle.field}
                   {...input}
                 />
-                {meta.error && meta.touched && <span>{meta.error}</span>}
+                {meta.error && meta.touched && (
+                  <span className={styles.form__item_error}>{meta.error}</span>
+                )}
               </div>
             )}
           </Field>
@@ -87,9 +93,9 @@ JogForm.propTypes = {
   onClose: PropTypes.func.isRequired,
   updateValues: PropTypes.shape({
     id: PropTypes.number,
-    user_id: PropTypes.string,
+    user_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     distance: PropTypes.number,
     time: PropTypes.number,
-    date: PropTypes.number,
+    date: PropTypes.object,
   }),
 };

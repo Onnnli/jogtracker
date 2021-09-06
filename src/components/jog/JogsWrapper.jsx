@@ -33,7 +33,7 @@ JogsWrapper.propTypes = {
   jogsList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
-      user_id: PropTypes.string,
+      user_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       distance: PropTypes.number,
       time: PropTypes.number,
       date: PropTypes.number,

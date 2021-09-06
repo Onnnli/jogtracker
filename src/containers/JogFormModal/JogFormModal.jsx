@@ -10,25 +10,23 @@ import cancel from '../../images/cancel.svg';
 
 import styles from './JogFormModal.module.css';
 
-const JogFormModal = ({ open, onClose, updateValues }) => {
-  return (
-    <Modal show={open}>
-      <Layout>
-        <div className={styles.content}>
-          <div
-            className={styles.form__wrapper}
-            onClick={e => e.stopPropagation()}
-          >
-            <Button onClick={onClose} className={styles.button__cancel}>
-              <img src={cancel} alt="cancel" />
-            </Button>
-            <JogForm updateValues={updateValues} onClose={onClose} />
-          </div>
+const JogFormModal = ({ open, onClose, updateValues }) => (
+  <Modal show={open}>
+    <Layout>
+      <div className={styles.content}>
+        <div
+          className={styles.form__wrapper}
+          onClick={e => e.stopPropagation()}
+        >
+          <Button onClick={onClose} className={styles.button__cancel}>
+            <img src={cancel} alt="cancel" />
+          </Button>
+          <JogForm updateValues={updateValues} onClose={onClose} />
         </div>
-      </Layout>
-    </Modal>
-  );
-};
+      </div>
+    </Layout>
+  </Modal>
+);
 
 export default JogFormModal;
 
@@ -37,9 +35,9 @@ JogFormModal.propTypes = {
   open: PropTypes.bool.isRequired,
   updateValues: PropTypes.shape({
     id: PropTypes.number,
-    user_id: PropTypes.string,
+    user_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     distance: PropTypes.number,
     time: PropTypes.number,
-    date: PropTypes.number,
+    date: PropTypes.object,
   }),
 };

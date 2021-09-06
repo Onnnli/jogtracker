@@ -35,6 +35,6 @@ const Filter = ({ date, onChange }) => {
 export default Filter;
 
 Filter.propTypes = {
-  date: PropTypes.string.isRequired,
+  date: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 };

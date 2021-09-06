@@ -26,7 +26,7 @@ const CustomDatePicker = ({ className, value, onChange, label, ...props }) => {
 export default CustomDatePicker;
 
 CustomDatePicker.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   className: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string,
