@@ -46,7 +46,7 @@
 }
 
 @media screen and (max-width: 640px) {
-    .date div {
+    .date div[class="react-datepicker-wrapper"] {
         width: initial;
     }
 

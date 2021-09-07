@@ -45,7 +45,7 @@
         font-size: 13px;
         margin-bottom: 6px;
     }
-    .field div {
+    .field div[class="react-datepicker-wrapper"] {
         width: 100%;
     }
 }
