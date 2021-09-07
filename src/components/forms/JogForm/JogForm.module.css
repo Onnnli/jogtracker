@@ -23,12 +23,6 @@
     margin-top: 25px;
 }
 
-.form__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .form__item_error {
     text-align: right;
     height: 0;
@@ -38,5 +32,10 @@
 @media screen and (max-width: 640px) {
     .form__item + .form__item {
         margin-top: 20px;
+    }
+
+    .button__submit {
+        max-width: 236px;
+
     }
 }
